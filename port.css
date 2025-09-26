@@ -1,0 +1,224 @@
+/* === GOOGLE FONTS (Optional but recommended) === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* === CSS VARIABLES & COLOR RULE === */
+:root {
+    /* 10-30-60 Color Palette */
+    --primary-color: #f4f7f5;   /* 60%: Dominant - Light background */
+    --secondary-color: #4a5568; /* 30%: Secondary - Header, footer, text */
+    --accent-color: #38b2ac;    /* 10%: Accent - Buttons, links, highlights */
+
+    /* Typography */
+    --text-color: #2d3748;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* === GENERAL STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--primary-color); /* <-- 60% DOMINANT COLOR */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color); /* <-- 30% SECONDARY COLOR for headings */
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* === HEADER & NAVIGATION === */
+header {
+    background-color: var(--secondary-color); /* <-- 30% SECONDARY COLOR */
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color); /* <-- 10% ACCENT COLOR for hover */
+}
+
+/* === HERO SECTION === */
+#hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color); /* <-- 10% ACCENT COLOR */
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #2c7a7b; /* A slightly darker accent */
+}
+
+/* === PROJECTS SECTION === */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-card h3,
+.project-card p,
+.project-card .project-link {
+    padding: 0 1.5rem;
+}
+
+.project-card h3 {
+    margin-top: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--accent-color); /* <-- 10% ACCENT COLOR */
+    text-decoration: none;
+    padding-bottom: 1.5rem;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+     color: #2c7a7b; /* Darker accent */
+}
+
+
+/* === FOOTER === */
+footer {
+    background-color: var(--secondary-color); /* <-- 30% SECONDARY COLOR */
+    color: #a0aec0; /* Lighter text for footer */
+    text-align: center;
+    padding: 3rem 0;
+}
+
+footer h2 {
+    color: white;
+}
+
+.email-link {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.email-link:hover {
+    color: var(--accent-color); /* <-- 10% ACCENT COLOR */
+}
+
+.social-icons {
+    margin: 1.5rem 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color); /* <-- 10% ACCENT COLOR */
+}
+
+.copyright {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* === RESPONSIVENESS === */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
